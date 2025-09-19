@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './index.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const handleLogin = () => {
+    window.location.href = "http://localhost:3000/auth/login";
+  };
 
   return (
-    <>
+     <div>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button
+          onClick={handleLogin}
+          className="flex items-center py-2 px-4 bg-black text-white hover:bg-gray-800 transition"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="white"
+            viewBox="0 0 24 24"
+            className="w-5 h-5"
+          >
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.655l-5.214-6.817-5.963 6.817H1.687l7.73-8.84L1.254 2.25h6.82l4.713 6.231 5.457-6.231z" />
+          </svg>
+          <span>Login with X</span>
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
